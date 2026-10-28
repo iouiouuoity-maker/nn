@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ГЕРОЙ 360° AI — вход в литературную лабораторию">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://*.workers.dev; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <title>Вход · ГЕРОЙ 360° AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="На главную"><span class="brand-mark">360°</span><span><strong>ГЕРОЙ</strong><small>AI · литературная лаборатория</small></span></a>
+    <span id="connectionBadge" class="status-badge">Сервер не настроен</span>
+  </header>
+  <main class="view hero-view">
+    <section class="hero-copy">
+      <p class="eyebrow">ГЕРОЙ 360° LAB · цифровое продолжение</p>
+      <h1>Учимся видеть героя <em>со всех сторон</em></h1>
+      <p class="lead">Отдельные кабинеты ученика и учителя, шесть шагов анализа, AI-подсказки и честный прогресс.</p>
+      <div class="trust-row"><span>✓ 6 класс · Я2</span><span>✓ 11 учеников</span><span>✓ «Атамұра», 2018</span></div>
+    </section>
+    <section class="login-shell" aria-labelledby="loginTitle">
+      <div class="role-switch" role="tablist" aria-label="Выберите роль">
+        <button class="role-tab active" data-role-tab="student" role="tab" aria-selected="true">Ученик</button>
+        <button class="role-tab" data-role-tab="teacher" role="tab" aria-selected="false">Учитель</button>
+      </div>
+      <div id="studentLoginPanel" class="login-panel">
+        <p class="panel-kicker">Моя литературная мастерская</p><h2 id="loginTitle">Вход ученика</h2>
+        <form id="studentLoginForm"><label>Код ученика<input name="code" autocomplete="one-time-code" placeholder="Получите код у учителя" required></label><button class="button primary full" type="submit">Войти</button></form>
+      </div>
+      <div id="teacherLoginPanel" class="login-panel hidden">
+        <p class="panel-kicker">Моя педагогическая мастерская</p><h2>Вход учителя</h2>
+        <form id="teacherLoginForm"><label>Логин<input name="login" value="laila.teacher" autocomplete="username" readonly></label><label>Пароль<input name="password" type="password" autocomplete="current-password" required></label><button class="button primary full" type="submit">Войти</button></form>
+        <p class="security-note">Пароль проверяет Cloudflare Worker и не хранится в коде сайта.</p>
+      </div>
+      <p id="loginMessage" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+name = "hero360-api"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+ENVIRONMENT = "production"
+ALLOWED_ORIGINS = "https://YOUR-GITHUB-USER.github.io"
+AI_MODEL = "@cf/meta/llama-3.1-8b-instruct"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hero360-class"
+database_id = "PASTE-D1-DATABASE-ID"
+
+[ai]
+binding = "AI"
